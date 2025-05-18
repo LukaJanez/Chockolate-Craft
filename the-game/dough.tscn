@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt6q46texrgvr"]
+
+[ext_resource type="Script" path="res://dough.gd" id="1_isce0"]
+[ext_resource type="Texture2D" uid="uid://cx8usji8im7jx" path="res://dough2.jpg" id="2_78qpu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjv6x"]
+size = Vector2(67, 70.5)
+
+[node name="dough" type="Node2D" groups=["ingreedient"]]
+script = ExtResource("1_isce0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.09)
+texture = ExtResource("2_78qpu")
+
+[node name="Area 2D" type="Area2D" parent="."]
+scale = Vector2(0.831776, 0.857143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area 2D"]
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_hjv6x")
+
+[connection signal="body_entered" from="Area 2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area 2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area 2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area 2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp3bvnimsvvx6"]
+
+[ext_resource type="Texture2D" uid="uid://bc26hji0cqiin" path="res://pngegg (4).png" id="2_vu2em"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bw8g"]
+size = Vector2(68, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi6al"]
+size = Vector2(72, 72)
+
+[node name="oven" type="StaticBody2D" groups=["oven"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7bw8g")
+
+[node name="StaticBody2D" type="Area2D" parent="." groups=["oven"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_gi6al")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 1.90735e-06)
+scale = Vector2(0.09125, 0.0844391)
+texture = ExtResource("2_vu2em")
+
+[connection signal="area_entered" from="StaticBody2D" to="." method="_on_area_entered"]

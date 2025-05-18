@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://hcu0b38dy214"]
+
+[ext_resource type="Script" path="res://shugar.gd" id="1_fed1l"]
+[ext_resource type="Texture2D" uid="uid://bedw8okwdob3o" path="res://pngegg.png" id="2_rwu8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjv6x"]
+size = Vector2(67, 69)
+
+[node name="shugar" type="Node2D" groups=["ingreedient", "shugar"]]
+position = Vector2(536, 268)
+script = ExtResource("1_fed1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.999983)
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("2_rwu8m")
+
+[node name="Area 2D" type="Area2D" parent="."]
+scale = Vector2(0.530279, 0.584713)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area 2D"]
+shape = SubResource("RectangleShape2D_hjv6x")
+
+[connection signal="body_entered" from="Area 2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area 2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area 2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area 2D" to="." method="_on_area_2d_mouse_exited"]

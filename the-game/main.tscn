@@ -1,0 +1,143 @@
+[gd_scene load_steps=15 format=3 uid="uid://c1v6do0y82430"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_2x4rp"]
+[ext_resource type="PackedScene" uid="uid://cd2hv5pi34hbd" path="res://drop_area.tscn" id="1_i4nlr"]
+[ext_resource type="PackedScene" uid="uid://b7u2rlbnpshsl" path="res://machine.tscn" id="3_8ah5d"]
+[ext_resource type="PackedScene" uid="uid://bq03fkja2cci6" path="res://clear_button.tscn" id="4_bvbb6"]
+[ext_resource type="PackedScene" uid="uid://dwgjy4g1xh3bo" path="res://start_machine_button.tscn" id="7_8mkg1"]
+[ext_resource type="PackedScene" uid="uid://dp3bvnimsvvx6" path="res://oven.tscn" id="10_hvrso"]
+[ext_resource type="PackedScene" uid="uid://c85gfopb64066" path="res://requests.tscn" id="12_ka1ck"]
+[ext_resource type="PackedScene" uid="uid://y3udo5cpf0mi" path="res://spawner.tscn" id="12_kurk4"]
+[ext_resource type="PackedScene" uid="uid://ccjtll5f4lc2g" path="res://start_oven_button.tscn" id="13_bsa6i"]
+[ext_resource type="PackedScene" uid="uid://csqxw3h4dqiw8" path="res://coin_gui.tscn" id="13_ou52r"]
+[ext_resource type="PackedScene" uid="uid://cpx6kdhyvfxrj" path="res://freezer.tscn" id="15_0y40a"]
+[ext_resource type="PackedScene" uid="uid://cyayndawa5kkw" path="res://pot.tscn" id="16_dyjdr"]
+[ext_resource type="PackedScene" uid="uid://bo8bsas4m0twf" path="res://start_pot_button.tscn" id="17_rm0tx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w7ygi"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_2x4rp")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-68, -34)
+scale = Vector2(1.11376, 1.21438)
+color = Color(0.266637, 0.639865, 0.604183, 1)
+polygon = PackedVector2Array(-1, -4, -20, 668, 1283.69, 706.703, 1212, -55)
+
+[node name="drop_area" parent="." instance=ExtResource("1_i4nlr")]
+position = Vector2(729, 366)
+
+[node name="machine" parent="." instance=ExtResource("3_8ah5d")]
+position = Vector2(262, 359)
+
+[node name="clear_button" parent="." instance=ExtResource("4_bvbb6")]
+position = Vector2(81, 340)
+
+[node name="start_machine_button" parent="." instance=ExtResource("7_8mkg1")]
+position = Vector2(262, 422)
+
+[node name="oven" parent="." instance=ExtResource("10_hvrso")]
+position = Vector2(495, 360)
+
+[node name="start_oven_button" parent="." instance=ExtResource("13_bsa6i")]
+position = Vector2(498, 422)
+
+[node name="freezer" parent="." instance=ExtResource("15_0y40a")]
+position = Vector2(134, 503)
+
+[node name="pot" parent="." instance=ExtResource("16_dyjdr")]
+position = Vector2(372, 504)
+
+[node name="start_pot_button" parent="." instance=ExtResource("17_rm0tx")]
+position = Vector2(370, 567)
+
+[node name="spawner" parent="." instance=ExtResource("12_kurk4")]
+position = Vector2(90, 238)
+
+[node name="requests" parent="." instance=ExtResource("12_ka1ck")]
+position = Vector2(744, 547)
+
+[node name="CoinGUI" parent="." instance=ExtResource("13_ou52r")]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "                   cocoa beans 	                shugar                milk                 dough                   butter"
+label_settings = SubResource("LabelSettings_w7ygi")
+
+[node name="Labell" type="Label" parent="."]
+offset_left = 234.0
+offset_top = 290.0
+offset_right = 294.0
+offset_bottom = 313.0
+text = "blender"
+
+[node name="Labell2" type="Label" parent="."]
+offset_left = 468.0
+offset_top = 294.0
+offset_right = 528.0
+offset_bottom = 317.0
+text = "oven"
+
+[node name="Labell3" type="Label" parent="."]
+offset_left = 354.0
+offset_top = 430.0
+offset_right = 414.0
+offset_bottom = 453.0
+text = "pot"
+
+[node name="Labell4" type="Label" parent="."]
+offset_left = 102.0
+offset_top = 431.0
+offset_right = 162.0
+offset_bottom = 454.0
+text = "freezer"
+
+[node name="Labell5" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 305.0
+offset_right = 164.0
+offset_bottom = 328.0
+text = "clear button"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 733.0
+offset_top = 96.0
+offset_right = 1107.0
+offset_bottom = 119.0
+text = "cocoa beans + shugar -> blender = chocko creme
+
+cocoa beans + shugar + milk -> blender = smoothie
+chocko creme + dough -> oven = crosant
+chocko creme + butter -> oven = brownie
+chocko creme + milk -> pot = hot chockolate 
+chocko creme -> freezer = chockolate
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 678.0
+offset_top = 464.0
+offset_right = 718.0
+offset_bottom = 487.0
+text = "costumer request"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 695.0
+offset_top = 301.0
+offset_right = 764.0
+offset_bottom = 324.0
+text = "sell  area"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 831.0
+offset_top = 361.0
+offset_right = 900.0
+offset_bottom = 384.0
+text = "item price:
+milkshake, hot chockolate = 2 coins
+chockolate = 3 coins
+crosant, brownie = 4 coins"
+
+[connection signal="ready" from="." to="spawner" method="_on_main_ready"]

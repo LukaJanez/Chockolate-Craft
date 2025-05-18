@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccjtll5f4lc2g"]
+
+[ext_resource type="Script" path="res://start_oven_button.gd" id="1_mlor4"]
+
+[node name="start_oven_button" type="Node2D"]
+position = Vector2(16, 17)
+
+[node name="start_button" type="Button" parent="."]
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 15.0
+offset_bottom = 18.0
+script = ExtResource("1_mlor4")
+
+[node name="spawnpoint" type="Node2D" parent="start_button"]
+position = Vector2(99, -39)
+scale = Vector2(1, 4.28)
+
+[connection signal="pressed" from="start_button" to="start_button" method="_on_pressed"]

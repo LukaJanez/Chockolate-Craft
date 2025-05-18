@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c85gfopb64066"]
+
+[ext_resource type="Script" path="res://requests.gd" id="1_ld3ux"]
+
+[node name="requests" type="Node2D"]
+script = ExtResource("1_ld3ux")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)

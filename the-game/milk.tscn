@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://su4ku2rhratj"]
+
+[ext_resource type="Script" path="res://milk.gd" id="1_mmiq4"]
+[ext_resource type="Texture2D" uid="uid://dbjrcn8n6wuuf" path="res://pngegg (5).png" id="2_m7pid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjv6x"]
+size = Vector2(67, 70.5)
+
+[node name="milk" type="Node2D" groups=["ingreedient"]]
+script = ExtResource("1_mmiq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.09)
+texture = ExtResource("2_m7pid")
+
+[node name="Area 2D" type="Area2D" parent="."]
+scale = Vector2(0.385185, 1.04)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area 2D"]
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_hjv6x")
+
+[connection signal="body_entered" from="Area 2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area 2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area 2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area 2D" to="." method="_on_area_2d_mouse_exited"]

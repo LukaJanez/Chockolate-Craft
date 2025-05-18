@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpx6kdhyvfxrj"]
+
+[ext_resource type="Script" path="res://freezer.gd" id="1_2qe6d"]
+[ext_resource type="Texture2D" uid="uid://s7253m4r2ntp" path="res://mini_fridge.jpg" id="1_3hix8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bw8g"]
+size = Vector2(68, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi6al"]
+size = Vector2(72, 72)
+
+[node name="freezer" type="StaticBody2D" groups=["freezer"]]
+script = ExtResource("1_2qe6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7bw8g")
+
+[node name="StaticBody2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_gi6al")
+
+[node name="spawnpoint" type="Node2D" parent="StaticBody2D"]
+position = Vector2(120, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.499999, -1.5)
+scale = Vector2(0.218563, 0.160944)
+texture = ExtResource("1_3hix8")
+
+[connection signal="area_entered" from="StaticBody2D" to="." method="_on_area_entered"]

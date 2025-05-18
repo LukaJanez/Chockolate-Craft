@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cduo27xyd6ech"]
+
+[ext_resource type="Script" path="res://chockolate.gd" id="1_pit3m"]
+[ext_resource type="Texture2D" uid="uid://de5ukt4bk65dm" path="res://chockolate.jpg" id="2_g4kbw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjv6x"]
+size = Vector2(67, 69)
+
+[node name="chockolate" type="Node2D" groups=["product"]]
+script = ExtResource("1_pit3m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.008407
+scale = Vector2(0.103972, 0.115267)
+texture = ExtResource("2_g4kbw")
+
+[node name="Area 2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area 2D"]
+shape = SubResource("RectangleShape2D_hjv6x")
+
+[connection signal="body_entered" from="Area 2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area 2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area 2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area 2D" to="." method="_on_area_2d_mouse_exited"]

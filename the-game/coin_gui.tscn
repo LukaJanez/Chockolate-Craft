@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://csqxw3h4dqiw8"]
+
+[ext_resource type="Script" path="res://label.gd" id="1_jp5iv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g26xd"]
+font_size = 150
+shadow_size = 0
+
+[node name="CoinGUI" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 718.0
+offset_top = 3.0
+offset_right = 1117.0
+offset_bottom = 255.0
+scale = Vector2(0.508, 0.416)
+text = "hell0"
+label_settings = SubResource("LabelSettings_g26xd")
+script = ExtResource("1_jp5iv")

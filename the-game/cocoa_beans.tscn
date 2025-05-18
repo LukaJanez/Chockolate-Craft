@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl3rdpih2t0rk"]
+
+[ext_resource type="Script" path="res://coca_bean.gd" id="1_y05f6"]
+[ext_resource type="Texture2D" uid="uid://qnaa1elbluf3" path="res://pngegg (1).png" id="2_5kqp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjv6x"]
+size = Vector2(67, 69)
+
+[node name="cocoa_beans" type="Node2D" groups=["cocoa_beans", "ingreedient"]]
+script = ExtResource("1_y05f6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -12)
+scale = Vector2(0.08, 0.1)
+texture = ExtResource("2_5kqp2")
+
+[node name="Area 2D" type="Area2D" parent="."]
+scale = Vector2(0.746988, 0.352643)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area 2D"]
+shape = SubResource("RectangleShape2D_hjv6x")
+
+[connection signal="body_entered" from="Area 2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area 2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area 2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area 2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpx1r7mkgy0sp"]
+
+[ext_resource type="Script" path="res://brownie.gd" id="1_bmjx4"]
+[ext_resource type="Texture2D" uid="uid://b033h4l83nwtq" path="res://brownie.webp" id="2_7dpxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjv6x"]
+size = Vector2(67, 69)
+
+[node name="brownie" type="Node2D" groups=["product"]]
+script = ExtResource("1_bmjx4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.50074, -0.500123)
+rotation = 0.008407
+scale = Vector2(0.0558329, 0.055388)
+texture = ExtResource("2_7dpxo")
+
+[node name="Area 2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area 2D"]
+shape = SubResource("RectangleShape2D_hjv6x")
+
+[connection signal="body_entered" from="Area 2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area 2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area 2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area 2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://y3udo5cpf0mi"]
+
+[ext_resource type="Script" path="res://spawner.gd" id="1_2n1cp"]
+
+[node name="spawner" type="Node2D"]
+script = ExtResource("1_2n1cp")
+
+[node name="beans_spawn" type="Node2D" parent="."]
+position = Vector2(125, 81)
+
+[node name="shugar_spawn" type="Node2D" parent="."]
+position = Vector2(278, 82)
+
+[node name="milk_spawn" type="Node2D" parent="."]
+position = Vector2(401, 82)
+
+[node name="dough_spawn" type="Node2D" parent="."]
+position = Vector2(520, 86)
+
+[node name="butter_spawn" type="Node2D" parent="."]
+position = Vector2(640, 84)
+
+[connection signal="ready" from="." to="." method="_on_ready"]

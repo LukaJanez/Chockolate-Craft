@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3sxhmr56vdr3"]
+
+[ext_resource type="Script" path="res://butter.gd" id="1_amag6"]
+[ext_resource type="Texture2D" uid="uid://ddbbe7r7cpoyg" path="res://pngegg (3).png" id="2_8xcby"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjv6x"]
+size = Vector2(67, 70.5)
+
+[node name="butter" type="Node2D" groups=["ingreedient"]]
+script = ExtResource("1_amag6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.09)
+texture = ExtResource("2_8xcby")
+
+[node name="Area 2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area 2D"]
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_hjv6x")
+
+[connection signal="body_entered" from="Area 2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area 2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area 2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area 2D" to="." method="_on_area_2d_mouse_exited"]
